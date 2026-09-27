@@ -54,7 +54,6 @@ services:
       - "3308:3306"
     volumes:
       - inventory_db_data:/var/lib/mysql
-      - ./init-scripts/inventory:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ["CMD-SHELL", "mysql --protocol=tcp -h 127.0.0.1 -u \"$$MYSQL_USER\" -p\"$$MYSQL_PASSWORD\" \"$$MYSQL_DATABASE\" -e 'SELECT 1' > /dev/null 2>&1"]
       interval: 5s

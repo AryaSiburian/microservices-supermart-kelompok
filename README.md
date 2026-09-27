@@ -530,4 +530,4 @@ docker compose -f deployment/docker/docker-compose.yml down
 ```
 
 Perintah `down` mempertahankan volume database; data tetap ada saat kontainer dibuat ulang. Jangan gunakan `down -v` jika data ingin dipertahankan.
-Skema dan contoh data Inventory dimuat sekali saat volume `inventory_db_data` masih baru dari `deployment/docker/init-scripts/inventory/`.
+Pada Praktikum 1, kontainer Inventory membuat database kosong yang terisolasi. Skema tabel dan data awal dapat ditambahkan pada praktikum lanjutan.
