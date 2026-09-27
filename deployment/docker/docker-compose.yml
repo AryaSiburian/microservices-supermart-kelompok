@@ -29,7 +29,7 @@ services:
       POSTGRES_USER: catalog_admin
       POSTGRES_PASSWORD: catalog_secret_pass
     ports:
-      - "5432:5432" 
+      - "27017:27017" 
     volumes:
       - catalog_db_data:/var/lib/postgresql/data
       - ./init-scripts/catalog:/docker-entrypoint-initdb.d:ro
