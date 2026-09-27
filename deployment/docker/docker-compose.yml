@@ -1,0 +1,29 @@
+services:
+  catalog-db:
+    image: postgres:15-alpine
+    container_name: supermart-catalog-db
+    restart: always
+    environment:
+      POSTGRES_DB: catalog_service_db
+      POSTGRES_USER: catalog_admin
+      POSTGRES_PASSWORD: catalog_secret_pass
+    ports:
+      - "5432:5432" 
+    volumes:
+      - catalog_db_data:/var/lib/postgresql/data
+      - ./init-scripts/catalog:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U catalog_admin -d catalog_service_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - supermart-network
+
+networks:
+  supermart-network:
+    driver: bridge
+    name: supermart-isolated-net
+
+volumes:
+  catalog_db_data:
