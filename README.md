@@ -501,3 +501,49 @@ Proyek ini dirancang untuk diselesaikan dalam 4 tahapan *milestone* praktikum ma
 
 ## 📄 Lisensi
 Lisensi Penggunaan Bahan Ajar Terbatas — PT Nusantara SuperMart Indonesia Course Materials. Dibuat untuk keperluan simulasi pendidikan rekayasa perangkat lunak dan arsitektur microservices.
+
+
+Supermart Microservices
+Ini adalah repositori monorepo untuk proyek Supermart Microservices. Ikuti petunjuk di bawah ini untuk mengatur dan menjalankan lingkungan pengembangan secara lokal menggunakan kontainer.
+1. Kloning Repositori
+Untuk memulai, kloning repositori ini ke mesin lokal Anda dan masuk ke dalam direktori proyek menggunakan perintah berikut:
+git clone https://github.com/AryaSiburian/microservices-supermart-kelompok.git
+cd microservices-supermart-kelompok
+
+
+2. Konfigurasi Basis Data
+Proyek ini menerapkan arsitektur microservices di mana setiap layanan memiliki basis datanya masing-masing. Berikut adalah daftar port, teknologi DBMS, dan kredensial yang digunakan untuk lingkungan pengembangan lokal:
+Layanan
+Teknologi DBMS
+Port
+Nama Database
+Username
+Password
+Service Utama
+PostgreSQL
+5431
+service_db
+postgres
+postgres
+Catalog
+PostgreSQL
+5432
+catalog_db
+postgres
+postgres
+
+(Catatan: Username, password, dan nama database di atas adalah nilai bawaan/default. Pastikan untuk menyesuaikannya jika Anda menggunakan nilai yang berbeda pada berkas .env Anda).
+3. Menjalankan Lingkungan Kontainer
+Pastikan Docker dan Docker Compose telah terinstal dan berjalan di sistem Anda sebelum mengeksekusi perintah di bawah ini.
+Menyalakan Kontainer
+Untuk membangun (jika diperlukan) dan menyalakan seluruh layanan beserta basis data di latar belakang (detached mode), jalankan perintah:
+docker-compose up -d
+
+
+(Gunakan docker compose up -d jika Anda menggunakan Docker Compose V2).
+Mematikan Kontainer
+Untuk menghentikan layanan dan menghapus kontainer, jaringan, serta volume yang dibuat oleh up, jalankan perintah:
+docker-compose down
+
+
+(Gunakan docker compose down jika Anda menggunakan Docker Compose V2).
