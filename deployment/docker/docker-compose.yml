@@ -94,3 +94,78 @@ volumes:
   catalog_db_data:
   inventory_db_data:
   order_db_data:
+services:
+  identity-db:
+    image: postgres:15-alpine
+    container_name: supermart-identity-db
+    restart: always
+    environment:
+      POSTGRES_DB: identity_service_db
+      POSTGRES_USER: identity_admin
+      POSTGRES_PASSWORD: identity_secret_pass
+    ports:
+      - "5431:5432" 
+    volumes:
+      - identity_db_data:/var/lib/postgresql/data
+      - ./init-scripts/identity:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U identity_admin -d identity_service_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - supermart-network
+
+  catalog-db:
+    image: postgres:15-alpine
+    container_name: supermart-catalog-db
+    restart: always
+    environment:
+      POSTGRES_DB: catalog_service_db
+      POSTGRES_USER: catalog_admin
+      POSTGRES_PASSWORD: catalog_secret_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - catalog_db_data:/var/lib/postgresql/data
+      - ./init-scripts/catalog:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U catalog_admin -d catalog_service_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - supermart-network
+
+  inventory-db:
+    image: mysql:8.0
+    container_name: supermart-inventory-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: inventory_root_secret_pass
+      MYSQL_DATABASE: inventory_service_db
+      MYSQL_USER: inventory_admin
+      MYSQL_PASSWORD: inventory_secret_pass
+    ports:
+      - "3308:3306"
+    volumes:
+      - inventory_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysql --protocol=tcp -h 127.0.0.1 -u \"$$MYSQL_USER\" -p\"$$MYSQL_PASSWORD\" \"$$MYSQL_DATABASE\" -e 'SELECT 1' > /dev/null 2>&1"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - supermart-network
+
+networks:
+  supermart-network:
+    driver: bridge
+    name: supermart-isolated-net
+
+volumes:
+  identity_db_data:
+  catalog_db_data:
+  inventory_db_data:
+  # order_db_data:
