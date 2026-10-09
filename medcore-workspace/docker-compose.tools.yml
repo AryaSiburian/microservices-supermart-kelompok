@@ -1,0 +1,25 @@
+name: medcore-tools
+services:
+  tools:
+    build: {context: ., dockerfile: tools/Dockerfile}
+    image: medcore-tools:local
+    user: "${MEDCORE_UID:-1000}:${MEDCORE_GID:-1000}"
+    working_dir: /workspace
+    environment:
+      GOCACHE: /tmp/go-build
+      GOMODCACHE: /tmp/go-mod
+      GOPATH: /tmp/go-path
+    volumes:
+      - .:/workspace
+      - go_tools_cache:/tmp/go-mod
+  k6:
+    image: grafana/k6:0.49.0
+    working_dir: /workspace/tests/benchmark
+    volumes: [".:/workspace:ro"]
+    # Linux: akses server anggota tim melalui port host.
+    network_mode: host
+    environment:
+      REST_BASE_URL: ${REST_BASE_URL:-http://localhost:${HOST_PORT_PHARMACY_REST:-8081}}
+      GRPC_TARGET: ${GRPC_TARGET:-localhost:${HOST_PORT_PHARMACY_GRPC:-50051}}
+volumes:
+  go_tools_cache:

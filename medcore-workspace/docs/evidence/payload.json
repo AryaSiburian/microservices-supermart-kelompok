@@ -1,6 +1,0 @@
-{
-  "json_bytes": 117,
-  "protobuf_bytes": 48,
-  "reduction_percent": 58.97435897435898,
-  "scope": "serialized response body only; excludes HTTP headers, gRPC 5-byte prefix, framing, TCP/IP and TLS"
-}
