@@ -1,0 +1,5 @@
+syntax = "proto3";
+package medcore.clinical.v1;
+// Modul tidak memberikan definisi RPC clinical; ini kontrak logical ID.
+message PatientReference { string patient_id = 1; }
+message AppointmentReference { string appointment_id = 1; string patient_id = 2; }

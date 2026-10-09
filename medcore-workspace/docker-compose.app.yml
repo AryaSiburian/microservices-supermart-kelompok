@@ -1,0 +1,61 @@
+services:
+  pharmacy:
+    build:
+      context: .
+      dockerfile: services/pharmacy-service/Dockerfile
+    container_name: medcore-pharmacy
+    restart: unless-stopped
+    environment:
+      MONGO_URI: mongodb://pharmacy-db:27017
+      PHARMACY_DB_NAME: ${PHARMACY_DB_NAME:?}
+      PHARMACY_DB_USER: ${PHARMACY_DB_USER:?}
+      PHARMACY_DB_PASS: ${PHARMACY_DB_PASS:?}
+      PHARMACY_DELAY_MS: ${PHARMACY_DELAY_MS:-0}
+      ENABLE_LAB_DELAY: "true"
+    ports:
+      - "127.0.0.1:${HOST_PORT_PHARMACY_GRPC:-50051}:50051"
+      - "127.0.0.1:${HOST_PORT_PHARMACY_REST:-8081}:8081"
+    depends_on:
+      pharmacy-db: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8081/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [medcore-net]
+  appointment-client:
+    profiles: [tools]
+    build:
+      context: .
+      dockerfile: services/appointment-service/Dockerfile
+    environment:
+      PHARMACY_GRPC_TARGET: pharmacy:50051
+    depends_on:
+      pharmacy: {condition: service_healthy}
+    networks: [medcore-net]
+  tools:
+    profiles: [tools]
+    build: {context: ., dockerfile: tools/Dockerfile}
+    image: medcore-tools:local
+    user: "${MEDCORE_UID:-1000}:${MEDCORE_GID:-1000}"
+    working_dir: /workspace
+    environment:
+      GOCACHE: /tmp/go-build
+      GOMODCACHE: /tmp/go-mod
+      GOPATH: /tmp/go-path
+      npm_config_cache: /tmp/npm-cache
+    volumes:
+      - .:/workspace
+      - go_tools_cache:/tmp/go-mod
+    networks: [medcore-net]
+  k6:
+    profiles: [tools]
+    image: grafana/k6:0.49.0
+    working_dir: /workspace/tests/benchmark
+    volumes: [".:/workspace:ro"]
+    environment:
+      REST_BASE_URL: http://pharmacy:8081
+      GRPC_TARGET: pharmacy:50051
+    networks: [medcore-net]
+volumes:
+  go_tools_cache:

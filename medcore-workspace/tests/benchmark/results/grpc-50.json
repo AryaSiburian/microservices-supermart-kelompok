@@ -1,0 +1,153 @@
+{
+  "root_group": {
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [],
+    "checks": [
+      {
+        "path": "::gRPC OK",
+        "id": "1f1fbbf5b0d190b3afff107d135772f5",
+        "passes": 358559,
+        "fails": 0,
+        "name": "gRPC OK"
+      },
+      {
+        "name": "stok identik",
+        "path": "::stok identik",
+        "id": "3772e98a858ee5d1710135b4b395a94d",
+        "passes": 358559,
+        "fails": 0
+      }
+    ],
+    "name": "",
+    "path": ""
+  },
+  "options": {
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "p(90)",
+      "p(95)",
+      "p(99)",
+      "max"
+    ],
+    "summaryTimeUnit": "",
+    "noColor": false
+  },
+  "state": {
+    "isStdOutTTY": false,
+    "isStdErrTTY": false,
+    "testRunDurationMs": 20003.000127
+  },
+  "metrics": {
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 33.863113,
+        "avg": 2.776132620921556,
+        "min": 0.407112,
+        "med": 2.296444,
+        "p(90)": 5.106063000000001,
+        "p(95)": 6.276724999999999,
+        "p(99)": 9.291463599999997
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 50,
+        "min": 50,
+        "max": 50
+      }
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "min": 50,
+        "max": 50,
+        "value": 50
+      }
+    },
+    "medcore_requests": {
+      "values": {
+        "rate": 17925.26109701004,
+        "count": 358559
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "grpc_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.330527,
+        "med": 2.155857,
+        "p(90)": 4.895806800000002,
+        "p(95)": 6.028162899999999,
+        "p(99)": 8.929366999999996,
+        "max": 28.825462,
+        "avg": 2.6208368234628265
+      }
+    },
+    "iterations": {
+      "values": {
+        "count": 358559,
+        "rate": 17925.26109701004
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "medcore_errors": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "passes": 0,
+        "fails": 358559,
+        "rate": 0
+      },
+      "thresholds": {
+        "rate==0": {
+          "ok": true
+        }
+      }
+    },
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 34290979,
+        "rate": 1714291.7953449453
+      }
+    },
+    "data_received": {
+      "contains": "data",
+      "values": {
+        "count": 46973432,
+        "rate": 2348319.3371875943
+      },
+      "type": "counter"
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 717118,
+        "fails": 0
+      },
+      "thresholds": {
+        "rate==1": {
+          "ok": true
+        }
+      }
+    }
+  },
+  "medcore_run": {
+    "protocol": "grpc",
+    "vus": 50,
+    "duration": "20s"
+  }
+}

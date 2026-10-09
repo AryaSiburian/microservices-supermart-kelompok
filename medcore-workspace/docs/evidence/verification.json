@@ -1,0 +1,183 @@
+{
+  "verified_at_utc": "2026-10-09T11:51:04.376788+00:00",
+  "checks": [
+    {
+      "test": "four_healthy_databases",
+      "passed": true,
+      "evidence": [
+        {
+          "service": "appointment-db",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "billing-db",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "patient-db",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "pharmacy-db",
+          "state": "running",
+          "health": "healthy"
+        }
+      ]
+    },
+    {
+      "test": "seed_data_and_billing_total",
+      "passed": true,
+      "evidence": "150000.00\t150000.00"
+    },
+    {
+      "test": "only_local_foreign_keys",
+      "passed": true,
+      "evidence": {
+        "patient-db": "user_credentials -> patients",
+        "appointment-db": "appointments -> doctors",
+        "billing-db": "invoice_items -> invoices"
+      }
+    },
+    {
+      "test": "cross_database_credential_rejected",
+      "passed": true,
+      "evidence": "psql: error: connection to server at \"appointment-db\" (172.28.0.12), port 5432 failed: FATAL:  password authentication failed for user \"usr_patient_svc\""
+    },
+    {
+      "test": "row_lock_contention",
+      "passed": true,
+      "evidence": {
+        "holder": "BEGIN\nb1111111-1111-1111-1111-111111111111\n\nROLLBACK\n",
+        "contender": "ERROR:  canceling statement due to lock timeout\nCONTEXT:  while updating tuple (0,1) in relation \"appointments\"",
+        "elapsed_ms": 665.5,
+        "final_status": "SCHEDULED"
+      }
+    },
+    {
+      "test": "grpc_valid",
+      "passed": true,
+      "evidence": {
+        "elapsed_ms": 3.228,
+        "message": "Pemeriksaan stok berhasil",
+        "response": {
+          "drug_code": "MED-AMX-500",
+          "is_available": true,
+          "current_stock": 500,
+          "unit_price": 3500,
+          "message": "Stok obat mencukupi"
+        },
+        "status": "OK"
+      }
+    },
+    {
+      "test": "grpc_insufficient_stock_business_response",
+      "passed": true,
+      "evidence": {
+        "elapsed_ms": 2.8,
+        "message": "Pemeriksaan stok berhasil",
+        "response": {
+          "drug_code": "MED-AMX-500",
+          "current_stock": 500,
+          "unit_price": 3500,
+          "message": "Stok tidak mencukupi. Tersedia: 500, Dibutuhkan: 600"
+        },
+        "status": "OK"
+      }
+    },
+    {
+      "test": "grpc_NotFound",
+      "passed": true,
+      "evidence": {
+        "elapsed_ms": 2.566,
+        "message": "Obat dengan kode MED-TIDAK-ADA tidak ditemukan dalam inventaris",
+        "response": null,
+        "status": "NotFound"
+      }
+    },
+    {
+      "test": "grpc_ResourceExhausted",
+      "passed": true,
+      "evidence": {
+        "elapsed_ms": 1.88,
+        "message": "Permintaan melebihi batas kuota farmasi",
+        "response": null,
+        "status": "ResourceExhausted"
+      }
+    },
+    {
+      "test": "grpc_InvalidArgument",
+      "passed": true,
+      "evidence": {
+        "elapsed_ms": 2.773,
+        "message": "Kode obat dan kuantitas positif wajib diisi",
+        "response": null,
+        "status": "InvalidArgument"
+      }
+    },
+    {
+      "test": "grpc_DeadlineExceeded",
+      "passed": true,
+      "evidence": {
+        "elapsed_ms": 500.276,
+        "message": "context deadline exceeded",
+        "response": null,
+        "status": "DeadlineExceeded"
+      }
+    },
+    {
+      "test": "grpc_recovers_after_timeout",
+      "passed": true,
+      "evidence": {
+        "elapsed_ms": 2.414,
+        "message": "Pemeriksaan stok berhasil",
+        "response": {
+          "drug_code": "MED-AMX-500",
+          "is_available": true,
+          "current_stock": 500,
+          "unit_price": 3500,
+          "message": "Stok obat mencukupi"
+        },
+        "status": "OK"
+      }
+    },
+    {
+      "test": "rest_grpc_same_business_response",
+      "passed": true,
+      "evidence": {
+        "drug_code": "MED-AMX-500",
+        "is_available": true,
+        "current_stock": 500,
+        "unit_price": 3500,
+        "message": "Stok obat mencukupi"
+      }
+    },
+    {
+      "test": "rest_errors_400_404_405_429",
+      "passed": true,
+      "evidence": "passed"
+    },
+    {
+      "test": "break_the_glass_reconciliation",
+      "passed": true,
+      "evidence": {
+        "unregistered_temporary_patient": "00000000-9999-9999-9999-000000000000",
+        "appointment_patient_after": "a0000000-0000-0000-0000-000000000003",
+        "prescription_patient_after": "a0000000-0000-0000-0000-000000000003",
+        "simulation": "synthetic patient; registration delay skipped"
+      }
+    },
+    {
+      "test": "payload_serialization_size",
+      "passed": true,
+      "evidence": {
+        "json_bytes": 117,
+        "protobuf_bytes": 48,
+        "reduction_percent": 58.97435897435898,
+        "scope": "serialized response body only; excludes HTTP headers, gRPC 5-byte prefix, framing, TCP/IP and TLS"
+      }
+    }
+  ]
+}
