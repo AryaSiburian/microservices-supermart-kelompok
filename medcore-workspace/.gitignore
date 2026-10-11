@@ -1,2 +1,7 @@
 node_modules/
 .env
+.cache/
+services/*/node_modules/
+services/*/dist/
+tests/benchmark/results/*.log
+__pycache__/

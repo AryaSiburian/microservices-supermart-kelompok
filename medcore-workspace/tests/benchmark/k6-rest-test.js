@@ -1,21 +1,16 @@
 import http from 'k6/http';
 import { check } from 'k6';
-
-export const options = {
-  stages: [
-    { duration: '10s', target: 50 },  // Ramp up ke 50 VUs (Virtual Users)
-    { duration: '20s', target: 200 }, // Spike mendadak ke 200 VUs
-    { duration: '10s', target: 0 },   // Cool down kembali ke 0
-  ],
-};
+import { requests, errors } from './common.js';
+export { options, handleSummary } from './common.js';
 
 export default function () {
-  const url = 'http://localhost:8081/api/v1/drugs/check?drug_code=MED-AMX-500';
-  
-  const res = http.get(url);
-
-  check(res, {
-    'status is 200': (r) => r.status === 200,
-    'has valid json': (r) => r.json() && r.json().drug_code === 'MED-AMX-500',
+  const base = __ENV.REST_BASE_URL || 'http://localhost:8081';
+  const response = http.get(`${base}/api/v1/drugs/check?drug_code=MED-AMX-500&quantity_needed=10`, { timeout: '2s' });
+  const ok = check(response, {
+    'HTTP 200': (r) => r.status === 200,
+    'stok identik': (r) => r.status === 200 && r.json().drug_code === 'MED-AMX-500'
+      && r.json().is_available === true && r.json().current_stock === 500,
   });
+  requests.add(1);
+  errors.add(!ok);
 }
