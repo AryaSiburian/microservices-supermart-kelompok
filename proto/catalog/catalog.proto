@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package catalog.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "<module-di-go.mod>/gen/catalog/v1;catalogv1";
+
+service CatalogService {
+  // Dipakai Order saat checkout untuk snapshot nama & harga
+  rpc GetProductsByIds(GetProductsByIdsRequest) returns (GetProductsByIdsResponse);
+}
+
+message GetProductsByIdsRequest {
+  repeated string product_ids = 1;
+}
+
+message GetProductsByIdsResponse {
+  repeated Product products = 1;
+  repeated string not_found_ids = 2;
+}
+
+message Product {
+  string id = 1;
+  string sku = 2;
+  string title = 3;
+  optional string description = 4;
+  double base_price = 5;
+  optional string brand_id = 6;
+  int32 weight_gram = 7;
+  bool is_published = 8;
+  google.protobuf.Timestamp created_at = 9;
+
+  optional string brand_name = 10;
+  optional string category_name = 11;
+  optional string category_id = 12;
+  optional string image_url = 13;
+  double rating = 14;
+  int32 review_count = 15;
+}

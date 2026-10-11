@@ -1,0 +1,10 @@
+.git
+.env
+.cache
+backend
+frontend
+deployment
+node_modules
+services/*/node_modules
+tests/benchmark/results
+docs/evidence

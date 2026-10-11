@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package inventory.v1;
+
+option go_package = "github.com/nusantara-supermart/backend/proto/inventory/v1;inventoryv1";
+
+service InventoryService {
+  // --- Unary RPC ---
+  // Cek ketersediaan SATU produk pada SATU gudang.
+  rpc CheckStock(CheckStockRequest) returns (CheckStockResponse);
+
+  // --- Batch RPC ---
+  // Reservasi BANYAK item keranjang sekaligus dalam SATU panggilan jaringan.
+  // Menggantikan loop `for _, item := range orderItems { ReserveStock(...) }`
+  // yang saat ini chatty (N RPC untuk N item). Dengan RPC ini: N item = 1 RPC.
+  rpc ReserveStockBatch(ReserveStockBatchRequest) returns (ReserveStockBatchResponse);
+
+  // --- Batch RPC ---
+  // Lepas SELURUH reservasi milik satu order sekaligus (rollback/cancel).
+  rpc ReleaseStockBatch(ReleaseStockBatchRequest) returns (ReleaseStockBatchResponse);
+}
+
+message CheckStockRequest {
+  string product_id   = 1;
+  string warehouse_id = 2;
+}
+
+message CheckStockResponse {
+  string product_id    = 1;
+  string warehouse_id  = 2;
+  int32  available_qty = 3;
+  bool   in_stock       = 4;
+}
+
+message ReserveStockBatchRequest {
+  string reference_order_id           = 1;
+  string warehouse_id                 = 2;
+  repeated ReserveStockLineItem items = 3;
+}
+
+message ReserveStockLineItem {
+  string product_id = 1;
+  int32  quantity   = 2;
+}
+
+message ReserveStockBatchResponse {
+  bool all_reserved = 1;
+  repeated ReserveStockResult results = 2;
+}
+
+message ReserveStockResult {
+  string product_id        = 1;
+  bool   reserved          = 2;
+  int32  available_qty     = 3;
+  StockErrorCode error_code = 4;
+}
+
+enum StockErrorCode {
+  STOCK_ERROR_CODE_UNSPECIFIED         = 0;
+  STOCK_ERROR_CODE_NONE                = 1;
+  STOCK_ERROR_CODE_INSUFFICIENT_STOCK  = 2;
+  STOCK_ERROR_CODE_PRODUCT_NOT_FOUND   = 3;
+  STOCK_ERROR_CODE_WAREHOUSE_NOT_FOUND = 4;
+}
+
+message ReleaseStockBatchRequest {
+  string reference_order_id = 1;
+}
+
+message ReleaseStockBatchResponse {
+  bool released = 1;
+}

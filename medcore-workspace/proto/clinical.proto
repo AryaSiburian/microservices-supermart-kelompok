@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package medcore.clinical.v1;
+
+option go_package = "services/appointment-service/pb;clinicalpb";
+
+// ClinicalService diimplementasi oleh Appointment Service
+// Dipanggil oleh layanan lain untuk query data jadwal & status konsultasi
+service ClinicalService {
+  // RPC Unary: Cek status konsultasi berdasarkan appointment_id
+  rpc GetAppointmentStatus (AppointmentStatusRequest) returns (AppointmentStatusResponse);
+
+  // RPC Unary: Konfirmasi appointment setelah stok obat terverifikasi
+  rpc ConfirmAppointment (ConfirmAppointmentRequest) returns (ConfirmAppointmentResponse);
+}
+
+message AppointmentStatusRequest {
+  string appointment_id = 1;
+}
+
+message AppointmentStatusResponse {
+  string appointment_id = 1;
+  string patient_id     = 2;
+  string doctor_id      = 3;
+  string status         = 4; // SCHEDULED | IN_PROGRESS | COMPLETED | CANCELLED
+  string clinical_notes = 5;
+  string schedule_time  = 6; // ISO 8601 timestamp string
+}
+
+message ConfirmAppointmentRequest {
+  string appointment_id         = 1;
+  string prescription_reference = 2; // RX ID dari Pharmacy Service
+}
+
+message ConfirmAppointmentResponse {
+  bool   success = 1;
+  string message = 2;
+}
