@@ -1,13 +1,16 @@
 package order
 
 import (
+	"context"
 	"errors"
 	"fmt"
+	"log"
+	"math"
 	"time"
 
 	"github.com/google/uuid"
+	inventoryv1 "github.com/nusantara-supermart/backend/gen/inventory/v1"
 	"github.com/nusantara-supermart/backend/internal/catalog"
-	"github.com/nusantara-supermart/backend/internal/inventory"
 )
 
 type Service interface {
@@ -24,13 +27,19 @@ type Service interface {
 	GetStatuses() ([]OrderStatus, error)
 }
 
+// The consumer depends only on the private RPC operations, not inventory.Service.
+type InventoryClient interface {
+	ReserveStockBatch(context.Context, *inventoryv1.ReserveStockBatchRequest) (*inventoryv1.ReserveStockBatchResponse, error)
+	ReleaseStockBatch(context.Context, *inventoryv1.ReleaseStockBatchRequest) (*inventoryv1.ReleaseStockBatchResponse, error)
+}
+
 type orderService struct {
 	repo         Repository
 	catalogSvc   catalog.Service
-	inventorySvc inventory.Service
+	inventorySvc InventoryClient
 }
 
-func NewService(repo Repository, catalogSvc catalog.Service, inventorySvc inventory.Service) Service {
+func NewService(repo Repository, catalogSvc catalog.Service, inventorySvc InventoryClient) Service {
 	return &orderService{
 		repo:         repo,
 		catalogSvc:   catalogSvc,
@@ -115,7 +124,7 @@ func (s *orderService) Checkout(customerID string, req CheckoutRequest) (*Order,
 	}
 
 	taxAmount := (grossTotal - discountAmount) * 0.11 // PPN 11%
-	shippingFee := 15000.00                          // Fixed estimate
+	shippingFee := 15000.00                           // Fixed estimate
 	totalNet := (grossTotal - discountAmount) + taxAmount + shippingFee
 
 	orderNumber := fmt.Sprintf("ORD-%s-%04d", time.Now().Format("20060102"), time.Now().Unix()%10000)
@@ -145,18 +154,38 @@ func (s *orderService) Checkout(customerID string, req CheckoutRequest) (*Order,
 		ShippingCost: shippingFee,
 	}
 
-	// Coupling check: reserve stock in Inventory domain
+	// One network batch; the provider owns atomicity across all cart items.
+	stockItems := make([]*inventoryv1.ReserveStockLineItem, 0, len(orderItems))
 	for _, item := range orderItems {
-		if err := s.inventorySvc.ReserveStock(item.ProductID, req.WarehouseID, orderID, item.Quantity); err != nil {
-			return nil, fmt.Errorf("failed to reserve stock for item %s: %w", item.ProductID, err)
+		if item.Quantity <= 0 || item.Quantity > math.MaxInt32 {
+			return nil, errors.New("cart quantity is outside the inventory contract range")
 		}
+		stockItems = append(stockItems, &inventoryv1.ReserveStockLineItem{ProductId: item.ProductID, Quantity: int32(item.Quantity)})
+	}
+	reserved, reserveErr := s.inventorySvc.ReserveStockBatch(context.Background(), &inventoryv1.ReserveStockBatchRequest{
+		ReferenceOrderId: orderID, WarehouseId: req.WarehouseID, Items: stockItems,
+	})
+	if reserveErr != nil || reserved == nil || !reserved.AllReserved {
+		if reserveErr == nil {
+			reserveErr = errors.New("inventory did not confirm all items")
+		}
+		// A timeout may happen after commit: release by the same key, including a
+		// tombstone that fences a late RPC. Never blindly retry a non-idempotent hold.
+		return nil, errors.Join(fmt.Errorf("reserve inventory for order %s: %w", orderID, reserveErr), s.releaseReservation(orderID))
 	}
 
 	// Save order
 	if err := s.repo.CreateOrder(newOrder, orderItems, shipping); err != nil {
-		// Rollback reservations
-		_ = s.inventorySvc.ReleaseStock(orderID)
-		return nil, fmt.Errorf("failed to create order: %w", err)
+		// A DB commit error can have an uncertain outcome. Confirm absence before
+		// compensation so a committed order does not lose its stock reservation.
+		exists, probeErr := s.repo.OrderExists(orderID)
+		if probeErr != nil || (!exists && errors.Is(err, ErrOrderCommitOutcomeUnknown)) {
+			log.Printf("RECONCILIATION_REQUIRED order=%s: save=%v probe=%v", orderID, err, probeErr)
+			return nil, fmt.Errorf("order %s save outcome unknown; reservation retained for reconciliation: %w", orderID, errors.Join(err, probeErr))
+		}
+		if !exists {
+			return nil, errors.Join(fmt.Errorf("failed to create order %s: %w", orderID, err), s.releaseReservation(orderID))
+		}
 	}
 
 	// Clear cart
@@ -202,9 +231,30 @@ func (s *orderService) CancelOrder(orderID, reason, userID string) error {
 	}
 
 	// Coupling: release reserved stock in Inventory domain
-	_ = s.inventorySvc.ReleaseStock(orderID)
+	if err := s.releaseReservation(orderID); err != nil {
+		return err
+	}
 
 	return s.repo.CancelOrder(orderID, reason, userID, cancelledStatus.ID)
+}
+
+func (s *orderService) releaseReservation(orderID string) error {
+	var err error
+	for attempt := 0; attempt < 3; attempt++ {
+		resp, callErr := s.inventorySvc.ReleaseStockBatch(context.Background(), &inventoryv1.ReleaseStockBatchRequest{ReferenceOrderId: orderID})
+		err = callErr
+		if err == nil && resp != nil && resp.Released {
+			return nil
+		}
+		if err == nil {
+			err = errors.New("inventory did not confirm release")
+		}
+		if attempt < 2 {
+			time.Sleep(100 * time.Millisecond)
+		}
+	}
+	log.Printf("COMPENSATION_REQUIRED order=%s: %v", orderID, err)
+	return fmt.Errorf("inventory compensation pending for order %s: %w", orderID, err)
 }
 
 func (s *orderService) AddOrderNote(orderID, userID, content string) error {

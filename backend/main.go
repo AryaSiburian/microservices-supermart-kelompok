@@ -15,6 +15,7 @@ import (
 	"github.com/nusantara-supermart/backend/internal/auth"
 	"github.com/nusantara-supermart/backend/internal/catalog"
 	"github.com/nusantara-supermart/backend/internal/inventory"
+	"github.com/nusantara-supermart/backend/internal/inventoryclient"
 	"github.com/nusantara-supermart/backend/internal/logistics"
 	"github.com/nusantara-supermart/backend/internal/order"
 	"github.com/nusantara-supermart/backend/internal/payment"
@@ -35,8 +36,7 @@ func main() {
 	// Database Connection
 	db, err := database.ConnectMySQL(cfg)
 	if err != nil {
-		log.Printf("WARNING: MySQL connection failed: %v", err)
-		log.Println("Backend will retry connecting when serving requests or initializing...")
+		log.Fatalf("MySQL connection failed: %v", err)
 	} else {
 		log.Println("Connected to MySQL database successfully!")
 		defer db.Close()
@@ -83,7 +83,12 @@ func main() {
 	authSvc := auth.NewService(authRepo, cfg)
 	catalogSvc := catalog.NewService(catalogRepo)
 	inventorySvc := inventory.NewService(inventoryRepo)
-	orderSvc := order.NewService(orderRepo, catalogSvc, inventorySvc)
+	inventoryRPC, err := inventoryclient.New(cfg.InventoryGRPCTarget)
+	if err != nil {
+		log.Fatalf("configure Inventory gRPC client: %v", err)
+	}
+	defer inventoryRPC.Close()
+	orderSvc := order.NewService(orderRepo, catalogSvc, inventoryRPC)
 	paymentSvc := payment.NewService(paymentRepo, orderSvc)
 	promotionSvc := promotion.NewService(promotionRepo)
 	logisticsSvc := logistics.NewService(logisticsRepo, orderSvc)

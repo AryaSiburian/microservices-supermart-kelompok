@@ -2,6 +2,7 @@ package order
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	"strings"
 	"time"
@@ -9,6 +10,9 @@ import (
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
 )
+
+// A failed commit acknowledgement does not prove that the order was rolled back.
+var ErrOrderCommitOutcomeUnknown = errors.New("order commit outcome unknown")
 
 type Repository interface {
 	GetOrCreateCart(customerID string) (*Cart, error)
@@ -18,6 +22,7 @@ type Repository interface {
 	RemoveCartItem(itemID string) error
 	ClearCart(cartID string) error
 	CreateOrder(o *Order, items []OrderItem, shipping *OrderShippingDetail) error
+	OrderExists(orderID string) (bool, error)
 	GetOrders(customerID, statusID string) ([]Order, error)
 	GetOrderByID(id string) (*Order, error)
 	GetOrderItems(orderID string) ([]OrderItem, error)
@@ -37,6 +42,12 @@ type mysqlRepository struct {
 
 func NewRepository(db *sqlx.DB) Repository {
 	return &mysqlRepository{db: db}
+}
+
+func (r *mysqlRepository) OrderExists(orderID string) (bool, error) {
+	var exists bool
+	err := r.db.Get(&exists, "SELECT EXISTS(SELECT 1 FROM orders WHERE id = ?)", orderID)
+	return exists, err
 }
 
 func (r *mysqlRepository) GetOrCreateCart(customerID string) (*Cart, error) {
@@ -235,7 +246,10 @@ func (r *mysqlRepository) CreateOrder(o *Order, items []OrderItem, shipping *Ord
 		VALUES (?, ?, 'Pesanan telah diproses dan siap dijemput oleh armada kurir', 'Hub Gudang Pengiriman')
 	`, logID, soID)
 
-	return tx.Commit()
+	if err := tx.Commit(); err != nil {
+		return errors.Join(ErrOrderCommitOutcomeUnknown, err)
+	}
+	return nil
 }
 
 func (r *mysqlRepository) GetOrders(customerID, statusID string) ([]Order, error) {

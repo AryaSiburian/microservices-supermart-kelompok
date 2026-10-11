@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package supermart.inventory.v1;
+option go_package = "github.com/nusantara-supermart/backend/gen/inventory/v1;inventoryv1";
+
+// Evolution: never renumber/reuse a published tag or change its type.
+// Add new fields with new tags; consumers must tolerate their defaults.
+// Mark an old field [deprecated = true] during a migration window. After all
+// consumers migrate, delete it and reserve BOTH its number and its name.
+// Example (only after deleting a real field): reserved 7; reserved "legacy_id";
+service InventoryService {
+  rpc CheckStock(CheckStockRequest) returns (CheckStockResponse);
+  // One DB transaction: either every item is held or none is changed.
+  // reference_order_id is an idempotency key; changing its payload is rejected.
+  rpc ReserveStockBatch(ReserveStockBatchRequest) returns (ReserveStockBatchResponse);
+  // Idempotent compensation/cancellation. Also fences a late reservation RPC.
+  rpc ReleaseStockBatch(ReleaseStockBatchRequest) returns (ReleaseStockBatchResponse);
+}
+
+message CheckStockRequest {
+  string product_id = 1;
+  string warehouse_id = 2;
+}
+message CheckStockResponse {
+  string product_id = 1;
+  string warehouse_id = 2;
+  int64 available_qty = 3;
+  bool in_stock = 4;
+}
+message ReserveStockLineItem {
+  string product_id = 1;
+  int32 quantity = 2;
+}
+message ReserveStockBatchRequest {
+  string reference_order_id = 1;
+  string warehouse_id = 2;
+  repeated ReserveStockLineItem items = 3;
+}
+message ReserveStockBatchResponse {
+  string reference_order_id = 1;
+  bool all_reserved = 2;
+}
+message ReleaseStockBatchRequest {
+  string reference_order_id = 1;
+}
+message ReleaseStockBatchResponse {
+  bool released = 1;
+}

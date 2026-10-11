@@ -1,0 +1,6 @@
+Hostname: tayama
+HTTP/2 + Protobuf | workers=50 | duration=30.002s
+mean_ms	p50_ms	p95_ms	p99_ms	RPS	payload_bytes	success	errors
+2.599	2.449	4.317	5.548	19237.73	80.00	577169	0
+ Container supermart-tugas2-benchmark-run-4b35dad27ecc Creating 
+ Container supermart-tugas2-benchmark-run-4b35dad27ecc Created 

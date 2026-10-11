@@ -18,6 +18,8 @@ type Config struct {
 	JWTSecret     string
 	JWTExpiry     string
 	CORSOrigins   []string
+
+	InventoryGRPCTarget string
 }
 
 func LoadConfig() *Config {
@@ -50,6 +52,8 @@ func LoadConfig() *Config {
 		JWTSecret:     jwtSecret,
 		JWTExpiry:     jwtExpiry,
 		CORSOrigins:   corsOrigins,
+
+		InventoryGRPCTarget: getEnv("INVENTORY_GRPC_TARGET", "127.0.0.1:50051"),
 	}
 }
 

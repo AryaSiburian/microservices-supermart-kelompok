@@ -1,0 +1,32 @@
+{
+  "hostname": "tayama",
+  "protocol": "HTTP/2 + Protobuf",
+  "go_version": "go1.26.4",
+  "concurrency": 50,
+  "requested_duration_seconds": 30,
+  "actual_duration_seconds": 30.001933933,
+  "started_at": "2026-10-11T18:53:55.985035439Z",
+  "finished_at": "2026-10-11T18:54:25.986969372Z",
+  "successful_requests": 577169,
+  "failed_requests": 0,
+  "mean_ms": 2.5985307690226036,
+  "p50_ms": 2.448672,
+  "p95_ms": 4.316753,
+  "p99_ms": 5.548091,
+  "rps": 19237.72651752809,
+  "response_bytes_mean": 80,
+  "response": {
+    "product_id": "p0000001-0000-0000-0000-000000000001",
+    "warehouse_id": "w0000001-0000-0000-0000-000000000001",
+    "available_qty": 118,
+    "in_stock": true
+  },
+  "target": "inventory:50051",
+  "resources": {
+    "sample_count": 60,
+    "cpu_percent_one_core_mean": 537.5996666666666,
+    "cpu_percent_host_mean": 33.599979166666664,
+    "memory_mib_mean": 13.585166666666666,
+    "memory_mib_peak": 14.33
+  }
+}

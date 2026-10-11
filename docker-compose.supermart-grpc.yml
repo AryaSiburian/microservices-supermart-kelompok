@@ -1,0 +1,74 @@
+name: supermart-tugas2
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: tugas2_root_local
+      MYSQL_DATABASE: nusantara_db
+      MYSQL_USER: nusantara_user
+      MYSQL_PASSWORD: nusantara_secret
+    ports:
+      - "127.0.0.1:3310:3306"
+    volumes:
+      - tugas2_mysql:/var/lib/mysql
+      - ./db.sql:/docker-entrypoint-initdb.d/01-db.sql:ro
+      - ./deployment/supermart/02-inventory-grpc.sql:/docker-entrypoint-initdb.d/02-inventory-grpc.sql:ro
+      - ./deployment/supermart/03-fixture.sql:/docker-entrypoint-initdb.d/03-fixture.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysql --protocol=tcp -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE -e 'SELECT 1' >/dev/null 2>&1"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+  inventory:
+    image: supermart-tugas2:local
+    build:
+      context: .
+      dockerfile: deployment/supermart/Dockerfile
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: nusantara_db
+      MYSQL_USER: nusantara_user
+      MYSQL_PASSWORD: nusantara_secret
+      INVENTORY_REST_ADDR: ":8081"
+      INVENTORY_GRPC_ADDR: ":50051"
+    ports:
+      - "127.0.0.1:8081:8081"
+      - "127.0.0.1:50051:50051"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1:8081/health"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    depends_on:
+      mysql:
+        condition: service_healthy
+  backend:
+    image: supermart-tugas2:local
+    command: backend
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: nusantara_db
+      MYSQL_USER: nusantara_user
+      MYSQL_PASSWORD: nusantara_secret
+      INVENTORY_GRPC_TARGET: inventory:50051
+      APP_PORT: 3000
+    ports:
+      - "127.0.0.1:3001:3000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      inventory:
+        condition: service_healthy
+  benchmark:
+    image: supermart-tugas2:local
+    profiles: ["tools"]
+    command: stock-benchmark
+    volumes:
+      - ./benchmarks/supermart/results:/results
+    depends_on:
+      inventory:
+        condition: service_started
+volumes:
+  tugas2_mysql:

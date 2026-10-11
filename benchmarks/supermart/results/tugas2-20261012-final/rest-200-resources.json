@@ -1,0 +1,1970 @@
+[
+  {
+    "at": "2026-10-11T18:55:30.100431+00:00",
+    "cpu_percent_one_core": 1.51,
+    "memory_bytes": 25134366.72,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "1.51%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.97MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.56GB / 1.68GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:30.599736+00:00",
+    "cpu_percent_one_core": 1.51,
+    "memory_bytes": 25134366.72,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "1.51%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.97MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.56GB / 1.68GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:31.100433+00:00",
+    "cpu_percent_one_core": 520.14,
+    "memory_bytes": 25249710.08,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "520.14%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.08MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.57GB / 1.7GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:31.599751+00:00",
+    "cpu_percent_one_core": 520.14,
+    "memory_bytes": 25249710.08,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "520.14%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.08MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.57GB / 1.7GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:32.100621+00:00",
+    "cpu_percent_one_core": 514.27,
+    "memory_bytes": 26046627.84,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "514.27%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.84MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.58GB / 1.71GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:32.599828+00:00",
+    "cpu_percent_one_core": 514.27,
+    "memory_bytes": 26046627.84,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "514.27%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.84MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.58GB / 1.71GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:33.100481+00:00",
+    "cpu_percent_one_core": 514.01,
+    "memory_bytes": 24662507.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "514.01%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.52MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.6GB / 1.73GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:33.599737+00:00",
+    "cpu_percent_one_core": 514.01,
+    "memory_bytes": 24662507.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "514.01%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.52MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.6GB / 1.73GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:34.099745+00:00",
+    "cpu_percent_one_core": 499.25,
+    "memory_bytes": 24180162.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "499.25%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.61GB / 1.74GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:34.600301+00:00",
+    "cpu_percent_one_core": 499.25,
+    "memory_bytes": 24180162.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "499.25%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.61GB / 1.74GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:35.099894+00:00",
+    "cpu_percent_one_core": 474.78,
+    "memory_bytes": 25228738.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "474.78%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.63GB / 1.76GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:35.600085+00:00",
+    "cpu_percent_one_core": 474.78,
+    "memory_bytes": 25228738.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "474.78%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.63GB / 1.76GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:36.099772+00:00",
+    "cpu_percent_one_core": 528.17,
+    "memory_bytes": 24652021.76,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "528.17%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.51MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.64GB / 1.77GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:36.600286+00:00",
+    "cpu_percent_one_core": 528.17,
+    "memory_bytes": 24652021.76,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "528.17%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.51MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.64GB / 1.77GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:37.100701+00:00",
+    "cpu_percent_one_core": 522.59,
+    "memory_bytes": 25386024.96,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "522.59%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.21MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.65GB / 1.79GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:37.599583+00:00",
+    "cpu_percent_one_core": 522.59,
+    "memory_bytes": 25386024.96,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "522.59%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.21MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.65GB / 1.79GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:38.099856+00:00",
+    "cpu_percent_one_core": 516.81,
+    "memory_bytes": 25019023.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "516.81%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.86MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.67GB / 1.81GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:38.600334+00:00",
+    "cpu_percent_one_core": 516.81,
+    "memory_bytes": 25019023.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "516.81%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.86MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.67GB / 1.81GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:39.099693+00:00",
+    "cpu_percent_one_core": 524.84,
+    "memory_bytes": 25753026.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.84%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.56MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.68GB / 1.82GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:39.600478+00:00",
+    "cpu_percent_one_core": 524.84,
+    "memory_bytes": 25753026.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.84%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.56MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.68GB / 1.82GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:40.100447+00:00",
+    "cpu_percent_one_core": 485.79,
+    "memory_bytes": 24903680.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "485.79%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.75MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.7GB / 1.84GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:40.599806+00:00",
+    "cpu_percent_one_core": 485.79,
+    "memory_bytes": 24903680.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "485.79%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.75MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.7GB / 1.84GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:41.100194+00:00",
+    "cpu_percent_one_core": 494.07,
+    "memory_bytes": 25427968.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "494.07%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.25MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.71GB / 1.85GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:41.599825+00:00",
+    "cpu_percent_one_core": 494.07,
+    "memory_bytes": 25427968.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "494.07%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.25MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.71GB / 1.85GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:42.100211+00:00",
+    "cpu_percent_one_core": 521.16,
+    "memory_bytes": 25406996.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "521.16%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.23MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.72GB / 1.87GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:42.599851+00:00",
+    "cpu_percent_one_core": 521.16,
+    "memory_bytes": 25406996.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "521.16%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.23MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.72GB / 1.87GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:43.099607+00:00",
+    "cpu_percent_one_core": 544.14,
+    "memory_bytes": 25910312.96,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "544.14%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.71MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.74GB / 1.89GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:43.600473+00:00",
+    "cpu_percent_one_core": 544.14,
+    "memory_bytes": 25910312.96,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "544.14%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.71MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.74GB / 1.89GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:44.100291+00:00",
+    "cpu_percent_one_core": 547.26,
+    "memory_bytes": 24966594.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "547.26%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.81MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.75GB / 1.9GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:44.599892+00:00",
+    "cpu_percent_one_core": 547.26,
+    "memory_bytes": 24966594.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "547.26%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.81MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.75GB / 1.9GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:45.099735+00:00",
+    "cpu_percent_one_core": 508.22,
+    "memory_bytes": 25857884.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "508.22%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.66MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.77GB / 1.92GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:45.600533+00:00",
+    "cpu_percent_one_core": 508.22,
+    "memory_bytes": 25857884.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "508.22%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.66MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.77GB / 1.92GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:46.099751+00:00",
+    "cpu_percent_one_core": 506.75,
+    "memory_bytes": 25228738.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "506.75%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.78GB / 1.93GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:46.600800+00:00",
+    "cpu_percent_one_core": 506.75,
+    "memory_bytes": 25228738.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "506.75%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.78GB / 1.93GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:47.100607+00:00",
+    "cpu_percent_one_core": 506.76,
+    "memory_bytes": 24830279.68,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "506.76%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.68MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.8GB / 1.95GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:47.599760+00:00",
+    "cpu_percent_one_core": 506.76,
+    "memory_bytes": 24830279.68,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "506.76%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.68MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.8GB / 1.95GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:48.100341+00:00",
+    "cpu_percent_one_core": 524.71,
+    "memory_bytes": 25207767.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.71%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.04MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.81GB / 1.97GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:48.599909+00:00",
+    "cpu_percent_one_core": 524.71,
+    "memory_bytes": 25207767.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.71%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.04MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.81GB / 1.97GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:49.100483+00:00",
+    "cpu_percent_one_core": 530.81,
+    "memory_bytes": 24851251.2,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "530.81%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.7MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.83GB / 1.98GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:49.599856+00:00",
+    "cpu_percent_one_core": 530.81,
+    "memory_bytes": 24851251.2,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "530.81%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.7MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.83GB / 1.98GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:50.099726+00:00",
+    "cpu_percent_one_core": 496.52,
+    "memory_bytes": 25333596.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "496.52%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.16MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.84GB / 2GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:50.600518+00:00",
+    "cpu_percent_one_core": 496.52,
+    "memory_bytes": 25333596.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "496.52%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.16MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.84GB / 2GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:51.101585+00:00",
+    "cpu_percent_one_core": 532.22,
+    "memory_bytes": 25302138.88,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "532.22%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.13MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.85GB / 2.01GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:51.600707+00:00",
+    "cpu_percent_one_core": 532.22,
+    "memory_bytes": 25302138.88,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "532.22%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.13MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.85GB / 2.01GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:52.100607+00:00",
+    "cpu_percent_one_core": 488.3,
+    "memory_bytes": 24945623.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "488.30%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.79MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.87GB / 2.03GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:52.599729+00:00",
+    "cpu_percent_one_core": 488.3,
+    "memory_bytes": 24945623.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "488.30%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.79MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.87GB / 2.03GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:53.100414+00:00",
+    "cpu_percent_one_core": 511.67,
+    "memory_bytes": 25165824.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "511.67%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.88GB / 2.04GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:53.599796+00:00",
+    "cpu_percent_one_core": 511.67,
+    "memory_bytes": 25165824.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "511.67%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.88GB / 2.04GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:54.100240+00:00",
+    "cpu_percent_one_core": 533.39,
+    "memory_bytes": 24882708.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "533.39%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.73MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.9GB / 2.06GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:54.599978+00:00",
+    "cpu_percent_one_core": 533.39,
+    "memory_bytes": 24882708.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "533.39%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.73MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.9GB / 2.06GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:55.100104+00:00",
+    "cpu_percent_one_core": 503.07,
+    "memory_bytes": 25333596.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "503.07%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.16MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.91GB / 2.08GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:55.600582+00:00",
+    "cpu_percent_one_core": 503.07,
+    "memory_bytes": 25333596.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "503.07%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.16MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.91GB / 2.08GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:56.100652+00:00",
+    "cpu_percent_one_core": 524.46,
+    "memory_bytes": 25522339.84,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.46%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.34MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.92GB / 2.09GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:56.599878+00:00",
+    "cpu_percent_one_core": 524.46,
+    "memory_bytes": 25522339.84,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.46%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.34MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.92GB / 2.09GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:57.099687+00:00",
+    "cpu_percent_one_core": 516.1,
+    "memory_bytes": 26654801.92,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "516.10%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.17%",
+      "MemUsage": "25.42MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.94GB / 2.11GB",
+      "PIDs": "33"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:57.600044+00:00",
+    "cpu_percent_one_core": 516.1,
+    "memory_bytes": 26654801.92,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "516.10%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.17%",
+      "MemUsage": "25.42MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.94GB / 2.11GB",
+      "PIDs": "33"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:58.099679+00:00",
+    "cpu_percent_one_core": 497.58,
+    "memory_bytes": 25019023.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "497.58%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.86MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.95GB / 2.12GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:58.600602+00:00",
+    "cpu_percent_one_core": 497.58,
+    "memory_bytes": 25019023.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "497.58%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.86MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.95GB / 2.12GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:59.100243+00:00",
+    "cpu_percent_one_core": 523.93,
+    "memory_bytes": 24746393.6,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "523.93%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.6MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.97GB / 2.14GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:55:59.599793+00:00",
+    "cpu_percent_one_core": 523.93,
+    "memory_bytes": 24746393.6,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "523.93%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.6MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.97GB / 2.14GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:00.100079+00:00",
+    "cpu_percent_one_core": 508.86,
+    "memory_bytes": 25595740.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "508.86%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.41MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.98GB / 2.16GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:00.600856+00:00",
+    "cpu_percent_one_core": 508.86,
+    "memory_bytes": 25595740.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "508.86%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.41MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "1.98GB / 2.16GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:01.099649+00:00",
+    "cpu_percent_one_core": 508.44,
+    "memory_bytes": 25532825.6,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "508.44%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.35MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2GB / 2.17GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:01.600389+00:00",
+    "cpu_percent_one_core": 508.44,
+    "memory_bytes": 25532825.6,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "508.44%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.35MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2GB / 2.17GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:02.099736+00:00",
+    "cpu_percent_one_core": 529.88,
+    "memory_bytes": 25784483.84,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "529.88%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.59MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.01GB / 2.19GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:02.599867+00:00",
+    "cpu_percent_one_core": 529.88,
+    "memory_bytes": 25784483.84,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "529.88%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.59MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.01GB / 2.19GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:03.100650+00:00",
+    "cpu_percent_one_core": 531.17,
+    "memory_bytes": 25899827.2,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "531.17%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.7MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.02GB / 2.2GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:03.600481+00:00",
+    "cpu_percent_one_core": 531.17,
+    "memory_bytes": 25899827.2,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "531.17%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.7MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.02GB / 2.2GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:04.099645+00:00",
+    "cpu_percent_one_core": 498.6,
+    "memory_bytes": 24924651.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "498.60%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.77MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.04GB / 2.22GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:04.599777+00:00",
+    "cpu_percent_one_core": 498.6,
+    "memory_bytes": 24924651.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "498.60%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.77MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.04GB / 2.22GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:05.100302+00:00",
+    "cpu_percent_one_core": 502.14,
+    "memory_bytes": 24725422.08,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "502.14%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.58MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.05GB / 2.23GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:05.599717+00:00",
+    "cpu_percent_one_core": 502.14,
+    "memory_bytes": 24725422.08,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "502.14%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.58MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.05GB / 2.23GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:06.100406+00:00",
+    "cpu_percent_one_core": 530.06,
+    "memory_bytes": 25165824.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "530.06%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.07GB / 2.25GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:06.599715+00:00",
+    "cpu_percent_one_core": 530.06,
+    "memory_bytes": 25165824.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "530.06%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.07GB / 2.25GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:07.100467+00:00",
+    "cpu_percent_one_core": 526.46,
+    "memory_bytes": 24882708.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "526.46%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.73MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.08GB / 2.27GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:07.599741+00:00",
+    "cpu_percent_one_core": 526.46,
+    "memory_bytes": 24882708.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "526.46%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.73MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.08GB / 2.27GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:08.100252+00:00",
+    "cpu_percent_one_core": 527.4,
+    "memory_bytes": 24001904.64,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "527.40%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "22.89MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.1GB / 2.28GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:08.599813+00:00",
+    "cpu_percent_one_core": 527.4,
+    "memory_bytes": 24001904.64,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "527.40%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "22.89MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.1GB / 2.28GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:09.100246+00:00",
+    "cpu_percent_one_core": 521.82,
+    "memory_bytes": 25323110.4,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "521.82%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.15MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.11GB / 2.3GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:09.599793+00:00",
+    "cpu_percent_one_core": 521.82,
+    "memory_bytes": 25323110.4,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "521.82%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.15MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.11GB / 2.3GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:10.099641+00:00",
+    "cpu_percent_one_core": 453.7,
+    "memory_bytes": 25543311.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "453.70%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.36MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.12GB / 2.31GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:10.599793+00:00",
+    "cpu_percent_one_core": 453.7,
+    "memory_bytes": 25543311.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "453.70%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.36MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.12GB / 2.31GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:11.099782+00:00",
+    "cpu_percent_one_core": 516.97,
+    "memory_bytes": 25228738.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "516.97%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.14GB / 2.33GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:11.600420+00:00",
+    "cpu_percent_one_core": 516.97,
+    "memory_bytes": 25228738.56,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "516.97%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.06MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.14GB / 2.33GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:12.099943+00:00",
+    "cpu_percent_one_core": 506.25,
+    "memory_bytes": 25060966.4,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "506.25%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.9MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.15GB / 2.34GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:12.599936+00:00",
+    "cpu_percent_one_core": 506.25,
+    "memory_bytes": 25060966.4,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "506.25%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.9MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.15GB / 2.34GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:13.100315+00:00",
+    "cpu_percent_one_core": 531.5,
+    "memory_bytes": 25847398.4,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "531.50%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.65MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.16GB / 2.36GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:13.599734+00:00",
+    "cpu_percent_one_core": 531.5,
+    "memory_bytes": 25847398.4,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "531.50%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.65MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.16GB / 2.36GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:14.101624+00:00",
+    "cpu_percent_one_core": 537.44,
+    "memory_bytes": 25438453.76,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "537.44%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.26MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.18GB / 2.38GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:14.600335+00:00",
+    "cpu_percent_one_core": 537.44,
+    "memory_bytes": 25438453.76,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "537.44%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.26MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.18GB / 2.38GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:15.099724+00:00",
+    "cpu_percent_one_core": 496.8,
+    "memory_bytes": 25448939.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "496.80%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.27MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.19GB / 2.39GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:15.599593+00:00",
+    "cpu_percent_one_core": 496.8,
+    "memory_bytes": 25448939.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "496.80%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.27MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.19GB / 2.39GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:16.099698+00:00",
+    "cpu_percent_one_core": 500.86,
+    "memory_bytes": 25281167.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "500.86%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.11MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.21GB / 2.41GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:16.600344+00:00",
+    "cpu_percent_one_core": 500.86,
+    "memory_bytes": 25281167.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "500.86%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.11MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.21GB / 2.41GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:17.100033+00:00",
+    "cpu_percent_one_core": 530.46,
+    "memory_bytes": 24526192.64,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "530.46%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.39MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.22GB / 2.42GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:17.599748+00:00",
+    "cpu_percent_one_core": 530.46,
+    "memory_bytes": 24526192.64,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "530.46%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.39MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.22GB / 2.42GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:18.100371+00:00",
+    "cpu_percent_one_core": 525.37,
+    "memory_bytes": 25606225.92,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "525.37%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.42MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.24GB / 2.44GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:18.599930+00:00",
+    "cpu_percent_one_core": 525.37,
+    "memory_bytes": 25606225.92,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "525.37%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.42MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.24GB / 2.44GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:19.100542+00:00",
+    "cpu_percent_one_core": 510.49,
+    "memory_bytes": 25543311.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "510.49%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.36MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.25GB / 2.46GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:19.600339+00:00",
+    "cpu_percent_one_core": 510.49,
+    "memory_bytes": 25543311.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "510.49%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.36MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.25GB / 2.46GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:20.100603+00:00",
+    "cpu_percent_one_core": 517.2,
+    "memory_bytes": 25469911.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "517.20%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.29MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.26GB / 2.47GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:20.599740+00:00",
+    "cpu_percent_one_core": 517.2,
+    "memory_bytes": 25469911.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "517.20%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.29MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.26GB / 2.47GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:21.100565+00:00",
+    "cpu_percent_one_core": 494.13,
+    "memory_bytes": 25239224.32,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "494.13%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.07MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.28GB / 2.49GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:21.599896+00:00",
+    "cpu_percent_one_core": 494.13,
+    "memory_bytes": 25239224.32,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "494.13%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.07MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.28GB / 2.49GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:22.100238+00:00",
+    "cpu_percent_one_core": 515.57,
+    "memory_bytes": 24977080.32,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "515.57%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.82MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.29GB / 2.5GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:22.599709+00:00",
+    "cpu_percent_one_core": 515.57,
+    "memory_bytes": 24977080.32,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "515.57%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.82MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.29GB / 2.5GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:23.099628+00:00",
+    "cpu_percent_one_core": 535.68,
+    "memory_bytes": 25144852.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "535.68%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.98MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.31GB / 2.52GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:23.599758+00:00",
+    "cpu_percent_one_core": 535.68,
+    "memory_bytes": 25144852.48,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "535.68%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.98MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.31GB / 2.52GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:24.099786+00:00",
+    "cpu_percent_one_core": 531.62,
+    "memory_bytes": 24830279.68,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "531.62%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.68MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.32GB / 2.54GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:24.600052+00:00",
+    "cpu_percent_one_core": 531.62,
+    "memory_bytes": 24830279.68,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "531.62%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.68MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.32GB / 2.54GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:25.100330+00:00",
+    "cpu_percent_one_core": 518.8,
+    "memory_bytes": 24285020.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "518.80%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.16MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.34GB / 2.55GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:25.599839+00:00",
+    "cpu_percent_one_core": 518.8,
+    "memory_bytes": 24285020.16,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "518.80%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.16MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.34GB / 2.55GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:26.100201+00:00",
+    "cpu_percent_one_core": 524.63,
+    "memory_bytes": 24924651.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.63%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.77MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.35GB / 2.57GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:26.599742+00:00",
+    "cpu_percent_one_core": 524.63,
+    "memory_bytes": 24924651.52,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "524.63%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.77MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.35GB / 2.57GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:27.100732+00:00",
+    "cpu_percent_one_core": 502.23,
+    "memory_bytes": 25469911.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "502.23%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.29MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.36GB / 2.58GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:27.599805+00:00",
+    "cpu_percent_one_core": 502.23,
+    "memory_bytes": 25469911.04,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "502.23%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.29MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.36GB / 2.58GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:28.099778+00:00",
+    "cpu_percent_one_core": 499.11,
+    "memory_bytes": 25427968.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "499.11%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.25MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.38GB / 2.6GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:28.600489+00:00",
+    "cpu_percent_one_core": 499.11,
+    "memory_bytes": 25427968.0,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "499.11%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "24.25MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.38GB / 2.6GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:29.099615+00:00",
+    "cpu_percent_one_core": 527.64,
+    "memory_bytes": 24337448.96,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "527.64%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.21MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.39GB / 2.62GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:29.600435+00:00",
+    "cpu_percent_one_core": 527.64,
+    "memory_bytes": 24337448.96,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "527.64%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.21MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.39GB / 2.62GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:30.100158+00:00",
+    "cpu_percent_one_core": 505.87,
+    "memory_bytes": 24756879.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "505.87%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.61MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.41GB / 2.63GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:30.599868+00:00",
+    "cpu_percent_one_core": 505.87,
+    "memory_bytes": 24756879.36,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "505.87%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.16%",
+      "MemUsage": "23.61MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.41GB / 2.63GB",
+      "PIDs": "31"
+    }
+  },
+  {
+    "at": "2026-10-11T18:56:31.100497+00:00",
+    "cpu_percent_one_core": 521.99,
+    "memory_bytes": 24631050.24,
+    "raw": {
+      "BlockIO": "8.19kB / 0B",
+      "CPUPerc": "521.99%",
+      "Container": "0266fbc1bef1fd6d922e0b39ca6560ef785905d0854f67d7ca0b7b9f636f9e53",
+      "ID": "0266fbc1bef1",
+      "MemPerc": "0.15%",
+      "MemUsage": "23.49MiB / 14.81GiB",
+      "Name": "supermart-tugas2-inventory-1",
+      "NetIO": "2.42GB / 2.65GB",
+      "PIDs": "31"
+    }
+  }
+]

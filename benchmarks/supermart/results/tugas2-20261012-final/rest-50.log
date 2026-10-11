@@ -1,0 +1,6 @@
+Hostname: tayama
+HTTP/1.1 + JSON | workers=50 | duration=30.002s
+mean_ms	p50_ms	p95_ms	p99_ms	RPS	payload_bytes	success	errors
+2.702	2.350	5.611	7.774	18502.99	145.00	555126	0
+ Container supermart-tugas2-benchmark-run-6d4c70743551 Creating 
+ Container supermart-tugas2-benchmark-run-6d4c70743551 Created 
