@@ -40,5 +40,5 @@ message ReserveStockRequest {
 message ReserveStockResponse {
   bool reservation_success = 1;
   string transaction_reference = 2;
-  
+  string error_detail = 3;
 }
