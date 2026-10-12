@@ -1,5 +1,6 @@
 name: medcore
 services:
+
   patient-db:
     image: postgres:16-alpine
     container_name: medcore-patient-db
@@ -23,6 +24,7 @@ services:
       retries: 20
     networks:
       medcore-net: {ipv4_address: 172.28.0.11}
+
   appointment-db:
     image: postgres:16-alpine
     container_name: medcore-appointment-db
@@ -46,6 +48,7 @@ services:
       retries: 20
     networks:
       medcore-net: {ipv4_address: 172.28.0.12}
+
   pharmacy-db:
     image: mongo:7.0-jammy
     container_name: medcore-pharmacy-db
