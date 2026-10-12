@@ -34,10 +34,12 @@ export default function () {
 
   check(response, {
     'status is OK': (r) => r && r.status === grpc.StatusOK,
-    'has valid drug_code': (r) => r && r.message && r.message.drug_code === 'MED-AMX-500',
-    'stok tersedia': (r) => r && r.message && r.message.is_available === true,
-    'current_stock > 0': (r) => r && r.message && r.message.current_stock > 0,
+    // Gunakan camelCase (drugCode, isAvailable, currentStock)
+    'has valid drug_code': (r) => r && r.message && (r.message.drugCode === 'MED-AMX-500' || r.message.drug_code === 'MED-AMX-500'),
+    'stok tersedia': (r) => r && r.message && (r.message.isAvailable === true || r.message.is_available === true),
+    'current_stock > 0': (r) => r && r.message && (r.message.currentStock > 0 || r.message.current_stock > 0),
   });
+
 
   // Tutup koneksi di akhir VU iteration
   client.close();
