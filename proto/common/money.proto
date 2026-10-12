@@ -1,0 +1,5 @@
+message Money {
+  string currency_code = 1; // ISO 4217, mis. "IDR"
+  int64  units          = 2; // Rp 95.000 -> units = 95000
+  int32  nanos           = 3; // sub-unit (0 untuk IDR, disiapkan utk mata uang lain)
+}
