@@ -1,6 +1,6 @@
 module pharmacy-service
 
-go 1.25.1
+go 1.26.0
 
 require (
 	go.mongodb.org/mongo-driver v1.14.0
@@ -21,5 +21,5 @@ require (
 	golang.org/x/sync v0.22.0 // indirect
 	golang.org/x/sys v0.47.0 // indirect
 	golang.org/x/text v0.40.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20260706201446-f0a921348800 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20261005182115-fad411399dd8 // indirect
 )
