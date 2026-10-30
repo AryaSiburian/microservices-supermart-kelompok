@@ -1,6 +1,6 @@
 name: medcore
-services:
 
+services:
   patient-db:
     image: postgres:16-alpine
     container_name: medcore-patient-db
@@ -73,6 +73,7 @@ services:
       start_period: 20s
     networks:
       medcore-net: {ipv4_address: 172.28.0.13}
+
   billing-db:
     image: mysql:8.0-debian
     container_name: medcore-billing-db
@@ -98,14 +99,39 @@ services:
       start_period: 30s
     networks:
       medcore-net: {ipv4_address: 172.28.0.14}
+
+  message-broker:
+    image: rabbitmq:3.13-management-alpine
+    container_name: medcore-message-broker
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS:-guest}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST:-/}
+    ports:
+      - "127.0.0.1:${RABBITMQ_HOST_PORT_AMQP:-5672}:5672"
+      - "127.0.0.1:${RABBITMQ_HOST_PORT_MGMT:-15672}:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD-SHELL", "rabbitmq-diagnostics -q ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 15s
+    networks:
+      medcore-net: {ipv4_address: 172.28.0.20}
+
 networks:
   medcore-net:
     name: medcore-net
     driver: bridge
     ipam:
       config: [{subnet: 172.28.0.0/16}]
+
 volumes:
   patient_db_vol:
   appointment_db_vol:
   pharmacy_db_vol:
   billing_db_vol:
+  rabbitmq_data:
