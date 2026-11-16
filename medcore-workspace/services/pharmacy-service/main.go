@@ -10,6 +10,7 @@ import (
 	"os"
 	"time"
 
+	"pharmacy-service/consumer"
 	pb "pharmacy-service/pb"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -187,6 +188,13 @@ func main() {
 		log.Fatalf("MongoDB ping gagal: %v", err)
 	}
 	log.Println("[MongoDB] Koneksi berhasil ke medcore-pharmacy-db")
+
+	// Jalankan RabbitMQ consumer (Praktikum 3)
+	amqpURI := os.Getenv("RABBITMQ_URI")
+	if amqpURI == "" {
+		amqpURI = "amqp://admin_medcore:SecuredPassRabbit2026%21@localhost:5672/%2Fmedcore_vhost"
+	}
+	go consumer.StartPrescriptionConsumer(amqpURI, client)
 
 	// Jalankan REST server secara goroutine (Langkah 3.1)
 	go startRESTServer(client)
