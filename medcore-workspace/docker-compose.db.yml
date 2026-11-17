@@ -127,6 +127,34 @@ services:
     networks:
       medcore-net: {ipv4_address: 172.28.0.20}
 
+  billing-worker:
+    build: {context: ./services/billing-service}
+    container_name: medcore-billing-worker
+    restart: unless-stopped
+    init: true
+    environment:
+      BILLING_DB_HOST: billing-db
+      BILLING_DB_PORT: "3306"
+      BILLING_DB_USER: ${BILLING_DB_USER:?}
+      BILLING_DB_PASS: ${BILLING_DB_PASS:?}
+      BILLING_DB_NAME: ${BILLING_DB_NAME:?}
+      RABBITMQ_HOST: message-broker
+      RABBITMQ_PORT: "5672"
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER:?}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS:?}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST:?}
+    depends_on:
+      billing-db: {condition: service_healthy}
+      message-broker: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f billing-worker > /dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    networks:
+      medcore-net: {ipv4_address: 172.28.0.21}
+
 networks:
   medcore-net:
     name: medcore-net
