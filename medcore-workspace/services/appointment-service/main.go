@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 	"time"
 
 	"appointment-service/publisher"
@@ -12,7 +13,10 @@ import (
 )
 
 func main() {
-	amqpURI := "amqp://admin_medcore:SecuredPassRabbit2026!@localhost:5672/medcore_vhost"
+	amqpURI := os.Getenv("RABBITMQ_URI")
+	if amqpURI == "" {
+		amqpURI = "amqp://admin_medcore:SecuredPassRabbit2026!@localhost:5672/medcore_vhost"
+	}
 
 	log.Println("[Appointment Service] Menginisialisasi koneksi messaging...")
 

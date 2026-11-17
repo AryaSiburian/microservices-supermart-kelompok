@@ -192,7 +192,7 @@ func main() {
 	// Jalankan RabbitMQ consumer (Praktikum 3)
 	amqpURI := os.Getenv("RABBITMQ_URI")
 	if amqpURI == "" {
-		amqpURI = "amqp://admin_medcore:SecuredPassRabbit2026%21@localhost:5672/%2Fmedcore_vhost"
+		amqpURI = "amqp://admin_medcore:SecuredPassRabbit2026%21@localhost:5672/medcore_vhost"
 	}
 	go consumer.StartPrescriptionConsumer(amqpURI, client)
 

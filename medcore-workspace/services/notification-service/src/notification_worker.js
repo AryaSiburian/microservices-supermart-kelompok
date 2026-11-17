@@ -1,6 +1,7 @@
 const amqp = require('amqplib');
 
 const AMQP_URI =
+    process.env.RABBITMQ_URI ||
     'amqp://admin_medcore:SecuredPassRabbit2026!@localhost:5672/medcore_vhost';
 const EXCHANGE_NAME = 'medcore.clinical.events';
 const QUEUE_NAME = 'notification.patient.alert.q';
