@@ -1,0 +1,124 @@
+{
+  "$schema": "https://www.krakend.io/schema/v2.6/krakend.json",
+  "version": 3,
+  "name": "SuperMart API Gateway",
+  "port": 8080,
+  "timeout": "3000ms",
+  "extra_config": {
+    "security/cors": {
+      "allow_origins": [
+        "http://localhost:4200",
+        "http://127.0.0.1:4200"
+      ],
+      "allow_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "allow_headers": [
+        "Origin",
+        "Authorization",
+        "Content-Type",
+        "Accept"
+      ],
+      "expose_headers": [
+        "Content-Length"
+      ],
+      "max_age": "12h"
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/api/v1/products/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "input_headers": [
+        "Authorization",
+        "Content-Type"
+      ],
+      "extra_config": {
+        "qos/ratelimit/router": {
+          "max_rate": 20,
+          "client_max_rate": 5,
+          "every": "1m",
+          "capacity": 5,
+          "strategy": "ip"
+        }
+      },
+      "backend": [
+        {
+          "url_pattern": "/products/{id}",
+          "encoding": "json",
+          "host": [
+            "http://catalog-service:8080"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/v1/orders/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "input_headers": [
+        "Authorization",
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/orders/{id}",
+          "encoding": "json",
+          "host": [
+            "http://order-service:8080"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/v1/order-summary/{order_id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "input_headers": [
+        "Authorization",
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/orders/{order_id}",
+          "group": "order_detail",
+          "encoding": "json",
+          "host": [
+            "http://order-service:8080"
+          ]
+        },
+        {
+          "url_pattern": "/products/{order_id}",
+          "group": "product_detail",
+          "encoding": "json",
+          "host": [
+            "http://catalog-service:8080"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/v1/auth/login",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/auth/login",
+          "encoding": "no-op",
+          "host": [
+            "http://backend:3000"
+          ]
+        }
+      ]
+    }
+  ]
+}
