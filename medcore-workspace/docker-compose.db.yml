@@ -155,6 +155,48 @@ services:
     networks:
       medcore-net: {ipv4_address: 172.28.0.21}
 
+  pharmacy-worker:
+    build: {context: ./services/pharmacy-service}
+    container_name: medcore-pharmacy-worker
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:${HOST_PORT_PHARMACY_GRPC:-50051}:50051"
+      - "127.0.0.1:${HOST_PORT_PHARMACY_REST:-8081}:8081"
+    environment:
+      PHARMACY_DB_NAME: ${PHARMACY_DB_NAME:?}
+      PHARMACY_MONGO_URI: "mongodb://${MONGO_ROOT_USER:?}:${MONGO_ROOT_PASS:?}@pharmacy-db:27017/${PHARMACY_DB_NAME:?}?authSource=admin"
+      RABBITMQ_URI: "amqp://${RABBITMQ_DEFAULT_USER:?}:${RABBITMQ_DEFAULT_PASS:?}@message-broker:5672/${RABBITMQ_DEFAULT_VHOST:?}"
+    depends_on:
+      pharmacy-db: {condition: service_healthy}
+      message-broker: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f pharmacy-service > /dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    networks:
+      medcore-net: {ipv4_address: 172.28.0.22}
+
+  notification-worker:
+    build: {context: ./services/notification-service}
+    container_name: medcore-notification-worker
+    restart: unless-stopped
+    init: true
+    environment:
+      RABBITMQ_URI: "amqp://${RABBITMQ_DEFAULT_USER:?}:${RABBITMQ_DEFAULT_PASS:?}@message-broker:5672/${RABBITMQ_DEFAULT_VHOST:?}"
+    depends_on:
+      message-broker: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f notification_worker.js > /dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    networks:
+      medcore-net: {ipv4_address: 172.28.0.23}
+
 networks:
   medcore-net:
     name: medcore-net

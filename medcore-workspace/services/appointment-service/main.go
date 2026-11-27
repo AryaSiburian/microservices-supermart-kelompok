@@ -26,11 +26,20 @@ func main() {
 	}
 	defer pub.Close()
 
+	eventID := os.Getenv("EVENT_ID")
+	occurredAt := time.Now().UTC().Format(time.RFC3339)
+	if eventID == "" {
+		eventID = fmt.Sprintf("evt-%s", uuid.New().String())
+	} else {
+		// Gunakan timestamp tetap saat EVENT_ID ditentukan agar payload identik untuk uji idempotensi
+		occurredAt = "2026-11-17T10:00:00Z"
+	}
+
 	// Simulasi event ketika konsultasi selesai
 	simulatedEvent := publisher.ConsultationCompletedEvent{
-		EventID:    fmt.Sprintf("evt-%s", uuid.New().String()),
+		EventID:    eventID,
 		EventName:  "ConsultationCompletedEvent",
-		OccurredAt: time.Now().UTC().Format(time.RFC3339),
+		OccurredAt: occurredAt,
 		Producer:   "appointment-service",
 		Payload: publisher.ConsultationPayload{
 			AppointmentID:      "b1111111-1111-1111-1111-111111111111",

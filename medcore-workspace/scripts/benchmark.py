@@ -40,6 +40,7 @@ def main():
     for protocol in ('rest', 'grpc'):
         run(protocol, 5, '3s')
     for index, vus in enumerate(loads):
+        
         # Tukar urutan tiap level untuk mengurangi bias urutan pemanasan.
         protocols = ('rest', 'grpc') if index % 2 == 0 else ('grpc', 'rest')
         for protocol in protocols:
