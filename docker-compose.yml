@@ -1,21 +1,45 @@
-version: '3.8'
-
 services:
+  # Public entry: forwards to KrakenD and adds Retry-After only on HTTP 429.
+  gateway-entry:
+    image: nginx:1.27-alpine
+    container_name: supermart-gateway-entry
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8080"
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/__health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    depends_on:
+      api-gateway:
+        condition: service_healthy
+    networks:
+      - supermart-net
+
   # ==========================================
   # 1. API GATEWAY (Pintu Masuk Publik)
   # ==========================================
   api-gateway:
     image: devopsfaith/krakend:2.6.3
     container_name: supermart-gateway
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/__health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
     restart: unless-stopped
-    ports:
-      - "8000:8080"
+    expose:
+      - "8080"
     volumes:
       - ./gateway/krakend.json:/etc/krakend/krakend.json:ro
     depends_on:
-      - catalog-service
-      - order-service
-      - backend
+      catalog-service:
+        condition: service_healthy
+      order-service:
+        condition: service_healthy
     networks:
       - supermart-net
 
@@ -24,8 +48,23 @@ services:
   # ==========================================
   catalog-service:
     build:
-      context: ./services/catalog
+      context: ./services
+      dockerfile: catalog/Dockerfile
     container_name: supermart-catalog
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: nusantara_db
+      MYSQL_USER: nusantara_user
+      MYSQL_PASSWORD: nusantara_secret
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
     restart: unless-stopped
     expose:
       - "8080"
@@ -34,8 +73,23 @@ services:
 
   order-service:
     build:
-      context: ./services/order
+      context: ./services
+      dockerfile: order/Dockerfile
     container_name: supermart-order
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: nusantara_db
+      MYSQL_USER: nusantara_user
+      MYSQL_PASSWORD: nusantara_secret
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
     restart: unless-stopped
     expose:
       - "8080"
@@ -85,10 +139,11 @@ services:
     volumes:
       - ./db.sql:/docker-entrypoint-initdb.d/01-db.sql:ro
       - ./seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+      - ./deployment/gateway/03-demo-fixture.sql:/docker-entrypoint-initdb.d/03-demo-fixture.sql:ro
       - mysql_data:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_secret"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-proot_secret"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -108,7 +163,7 @@ services:
     ports:
       - "4200:80"
     depends_on:
-      - api-gateway
+      - gateway-entry
     networks:
       - supermart-net
 

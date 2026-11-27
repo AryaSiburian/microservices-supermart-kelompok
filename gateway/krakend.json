@@ -41,11 +41,11 @@
       ],
       "extra_config": {
         "qos/ratelimit/router": {
-          "max_rate": 20,
           "client_max_rate": 5,
           "every": "1m",
-          "capacity": 5,
-          "strategy": "ip"
+          "client_capacity": 5,
+          "strategy": "header",
+          "key": "X-Gateway-Client-IP"
         }
       },
       "backend": [
@@ -94,7 +94,7 @@
           ]
         },
         {
-          "url_pattern": "/products/{order_id}",
+          "url_pattern": "/orders/{order_id}/products",
           "group": "product_detail",
           "encoding": "json",
           "host": [
@@ -112,7 +112,7 @@
       ],
       "backend": [
         {
-          "url_pattern": "/api/auth/login",
+          "url_pattern": "/api/v1/auth/login",
           "encoding": "no-op",
           "host": [
             "http://backend:3000"

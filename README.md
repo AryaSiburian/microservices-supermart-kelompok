@@ -531,3 +531,125 @@ docker compose -f deployment/docker/docker-compose.yml down
 
 Perintah `down` mempertahankan volume database; data tetap ada saat kontainer dibuat ulang. Jangan gunakan `down -v` jika data ingin dipertahankan.
 Pada Praktikum 1, kontainer Inventory membuat database kosong yang terisolasi. Skema tabel dan data awal dapat ditambahkan pada praktikum lanjutan.
+
+
+## Praktikum 9: API Gateway SuperMart
+
+Jalur minimum praktikum ini memakai Catalog dan Order sebagai proses HTTP terpisah,
+KrakenD untuk routing/agregasi, serta Nginx sebagai pintu publik pada `127.0.0.1:8000`.
+Nginx menambahkan `Retry-After: 60` hanya ketika KrakenD mengembalikan HTTP 429.
+
+```text
+Klien :8000 -> Nginx -> KrakenD -> Catalog :8080 -> MySQL
+                              -> Order   :8080 -> MySQL
+```
+
+Catalog dan Order adalah adapter baca atas skema MySQL seed SuperMart yang sudah
+ada; ini belum merupakan dekomposisi database per layanan. Tidak ada perubahan
+pada checkout, stok, skema legacy, database Praktikum 1, atau MedCore.
+
+### Jalankan layanan minimum
+
+Dari root repositori, dengan Docker Compose terpasang:
+
+```bash
+docker compose -p supermart-gateway-local up -d --build --wait gateway-entry
+docker compose -p supermart-gateway-local ps
+curl -i http://localhost:8000/api/v1/products/1
+curl -i http://localhost:8000/api/v1/orders/1
+curl -s http://localhost:8000/api/v1/order-summary/1
+```
+
+Perintah tersebut menjalankan lima container: MySQL, Catalog, Order, KrakenD dan
+Nginx. Hanya port 8000 yang dipublikasikan. Frontend dan backend monolitik legacy
+bukan prasyarat lima pengujian modul dan tidak dijalankan oleh perintah minimum.
+Konfigurasi login tambahan tetap tersedia; jika ingin menggunakannya, jalankan
+`docker compose -p supermart-gateway-local up -d --build backend` secara terpisah.
+Login dan frontend tidak termasuk verifikasi integrasi gateway ini.
+
+Project `supermart-gateway-local` memakai volume MySQL tersendiri. Inisialisasi
+volume baru menjalankan `db.sql`, `seed.sql`, lalu
+`deployment/gateway/03-demo-fixture.sql`. Fixture tambahan menyediakan produk/order
+ber-ID `1`, menggunakan produk beras asli seed dengan harga 95000. Fixture tidak
+menimpa baris lama. Jika volume project ini sudah berisi seed sebelum fixture
+ditambahkan, jalankan fixture sekali tanpa menghapus data:
+
+```bash
+docker compose -p supermart-gateway-local exec -T mysql sh -c \
+  'exec mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE"' \
+  < deployment/gateway/03-demo-fixture.sql
+```
+
+### Routing dan agregasi
+
+| Rute publik | Backend internal |
+| --- | --- |
+| `GET /api/v1/products/{id}` | Catalog `/products/{id}` |
+| `GET /api/v1/orders/{id}` | Order `/orders/{id}` |
+| `GET /api/v1/order-summary/{order_id}` | Order `/orders/{order_id}` dan Catalog `/orders/{order_id}/products` |
+
+Agregasi KrakenD memanggil kedua backend secara paralel. Hasil normal memiliki
+`order_detail`, `product_detail`, serta header `X-Krakend-Completed: true`.
+Catalog membaca relasi `order_items.product_id`; ID order tidak diasumsikan sama
+dengan ID produk. Harga pada `order_detail.items[].unit_price` adalah snapshot
+transaksi, sedangkan `product_detail.products[].base_price` berasal dari katalog.
+Jika salah satu layanan mati, grup dari layanan yang hidup tetap muncul dengan
+`X-Krakend-Completed: false`. Ini bukan jaminan ketahanan jika MySQL bersama mati.
+
+### Rate limiting
+
+Endpoint produk memakai token bucket per IP: kapasitas awal 5 dan pengisian ulang
+5 token per menit (`client_capacity: 5`, `every: "1m"`). Token diisi bertahap,
+bukan penghitung fixed window 60 detik. Delapan request cepat dari IP yang sama
+menghasilkan lima HTTP 200 lalu tiga HTTP 429. Header `Retry-After: 60` merupakan
+waktu tunggu konservatif untuk mengisi penuh bucket.
+
+KrakenD memakai `strategy: "header"` karena berada di belakang Nginx. Nginx
+**selalu menimpa** `X-Gateway-Client-IP` dengan `$remote_addr`; klien tidak dapat
+memilih identitas limiter melalui header. KrakenD dan provider tidak memiliki
+pemetaan port host. Kepercayaan header ini berlaku untuk jaringan internal
+praktikum; jangan mempublikasikan KrakenD secara langsung.
+
+```bash
+docker compose -p supermart-gateway-local restart api-gateway
+# Setelah restart selesai:
+for i in {1..8}; do
+  echo "Request $i"
+  curl -s -D - -o /dev/null http://localhost:8000/api/v1/products/1
+done
+```
+
+### Verifikasi yang dapat diulang
+
+Dengan `bash`, `curl` dan `jq` terpasang:
+
+```bash
+bash gateway/verify.sh
+```
+
+Skrip memeriksa konfigurasi, rute tunggal, hubungan order/produk, agregasi,
+penghentian Catalog dan Order secara bergantian, pemulihan, delapan request,
+`Retry-After`, serta penolakan pemalsuan header IP. Skrip melakukan restart
+KrakenD untuk mereset token dan memulihkannya sesudah uji; jangan jalankan saat
+orang lain sedang memakai demo yang sama.
+
+Untuk isolasi, skrip memastikan provider tidak memiliki port host. Karena port
+8080/8081 pada mesin pengembangan dipakai aplikasi lain, skrip membuat provider
+sementara dari image Catalog yang sama pada `127.0.0.1:18081`, membuktikan HTTP
+200, lalu menghapus provider sementara tersebut dan membuktikan koneksi ditolak.
+Container Catalog yang melayani gateway tetap menggunakan `expose` tanpa `ports`.
+Port 18081 harus kosong sebelum uji. Skrip tidak menghentikan aplikasi lain.
+
+Bukti aktual disimpan di luar repo pada
+`~/Downloads/Laporan Pertemuan 9 API Gateway SuperMart/hasil-uji/` berupa body,
+header, status rate limit, snapshot container, waktu dan transkrip. Direktori
+hasil alternatif dapat diberikan sebagai argumen pertama `gateway/verify.sh`.
+
+Untuk menghentikan project ini sambil mempertahankan data:
+
+```bash
+docker compose -p supermart-gateway-local down
+```
+
+Referensi: [KrakenD rate limiting 2.6](https://www.krakend.io/docs/v2.6/endpoints/rate-limit/)
+dan [konfigurasi backend KrakenD 2.6](https://www.krakend.io/docs/v2.6/backends/).
