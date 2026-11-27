@@ -1,4 +1,75 @@
+version: '3.8'
+
 services:
+  # ==========================================
+  # 1. API GATEWAY (Pintu Masuk Publik)
+  # ==========================================
+  api-gateway:
+    image: devopsfaith/krakend:2.6.3
+    container_name: supermart-gateway
+    restart: unless-stopped
+    ports:
+      - "8000:8080"
+    volumes:
+      - ./gateway/krakend.json:/etc/krakend/krakend.json:ro
+    depends_on:
+      - catalog-service
+      - order-service
+      - backend
+    networks:
+      - supermart-net
+
+  # ==========================================
+  # 2. INTERNAL MICROSERVICES (Expose Only)
+  # ==========================================
+  catalog-service:
+    build:
+      context: ./services/catalog
+    container_name: supermart-catalog
+    restart: unless-stopped
+    expose:
+      - "8080"
+    networks:
+      - supermart-net
+
+  order-service:
+    build:
+      context: ./services/order
+    container_name: supermart-order
+    restart: unless-stopped
+    expose:
+      - "8080"
+    networks:
+      - supermart-net
+
+  # ==========================================
+  # 3. NUSANTARA BACKEND & DATABASE
+  # ==========================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nusantara-backend
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: nusantara_db
+      MYSQL_USER: nusantara_user
+      MYSQL_PASSWORD: nusantara_secret
+      APP_PORT: 3000
+      APP_ENV: production
+      JWT_SECRET: supermart-secret-key-for-nusantara-course-2026
+      JWT_EXPIRY: 24h
+      CORS_ORIGINS: "http://localhost:4200,http://127.0.0.1:4200,http://localhost:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - supermart-net
+
   mysql:
     image: mysql:8.0
     container_name: nusantara-mysql
@@ -8,8 +79,9 @@ services:
       MYSQL_DATABASE: nusantara_db
       MYSQL_USER: nusantara_user
       MYSQL_PASSWORD: nusantara_secret
-    ports:
-      - "3306:3306"
+    # Port 3306 internal (opsional: ganti expose jika DB tidak perlu diakses langsung via DBeaver/Navicat host)
+    expose:
+      - "3306"
     volumes:
       - ./db.sql:/docker-entrypoint-initdb.d/01-db.sql:ro
       - ./seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
@@ -21,30 +93,12 @@ services:
       timeout: 5s
       retries: 10
       start_period: 15s
+    networks:
+      - supermart-net
 
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: nusantara-backend
-    restart: unless-stopped
-    ports:
-      - "3000:3000"
-    environment:
-      MYSQL_HOST: mysql
-      MYSQL_PORT: 3306
-      MYSQL_DATABASE: nusantara_db
-      MYSQL_USER: nusantara_user
-      MYSQL_PASSWORD: nusantara_secret
-      APP_PORT: 3000
-      APP_ENV: production
-      JWT_SECRET: supermart-secret-key-for-nusantara-course-2026
-      JWT_EXPIRY: 24h
-      CORS_ORIGINS: "http://localhost:4200,http://127.0.0.1:4200,http://localhost:3000"
-    depends_on:
-      mysql:
-        condition: service_healthy
-
+  # ==========================================
+  # 4. FRONTEND
+  # ==========================================
   frontend:
     build:
       context: ./frontend
@@ -54,7 +108,16 @@ services:
     ports:
       - "4200:80"
     depends_on:
-      - backend
+      - api-gateway
+    networks:
+      - supermart-net
+
+# ==========================================
+# NETWORKS & VOLUMES
+# ==========================================
+networks:
+  supermart-net:
+    driver: bridge
 
 volumes:
   mysql_data:
